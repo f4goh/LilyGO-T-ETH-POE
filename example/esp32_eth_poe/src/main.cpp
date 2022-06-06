@@ -4,52 +4,38 @@
  * 
  * Created on 25 mai 2022, 16:06
  * Test Ethernet ESP32 class
+ * 
+ * check ethernet connexion and reconnect automatically
+ * 
  */
 
 #include <Arduino.h>
 #include <Ethernet.h>
+#include <Aprsis.h>
 
-bool eth_done = false;
 
 
 Ethernet * ethernet;
+Aprsis *is;
 
+void setup() {
+    Serial.begin(115200);
+    ethernet = new Ethernet;
 
-void setup()
-{
-  Serial.begin(115200);
-  ethernet = new Ethernet;
+    while (!ethernet->isConnected()) {
+
+    }
+    
+    bool ret;
+    is = new Aprsis;
+    ret = is->setup("F4GOH-2", "4753.41N", "00016.61E", "LoRa iGATE : https://github.com/f4goh/lora-aprs-esp32", "euro.aprs2.net", 14580);
+    if (ret) {
+        Serial.println("task APRS IS ok");
+    } else Serial.println("Internet igate server error");
+
 }
 
-void testClient(const char *host, uint16_t port)
-{
-  Serial.print("\nconnecting to ");
-  Serial.println(host);
+void loop() {
 
-  WiFiClient client;
-  if (!client.connect(host, port))
-  {
-    Serial.println("connection failed");
-    return;
-  }
-  client.printf("GET / HTTP/1.1\r\nHost: %s\r\n\r\n", host);
-  while (client.connected() && !client.available());
-  while (client.available())
-  {
-    Serial.write(client.read());
-  }
 
-  Serial.println("closing connection\n");
-  client.stop();
-}
-
-void loop()
-{
-
-  if (ethernet->isConnected() && !eth_done)
-  {
-    testClient("touchardinforeseau.servehttp.com", 80);
-    eth_done = true;
-  }
- 
 }
