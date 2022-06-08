@@ -1,0 +1,16 @@
+{
+  "name": "poe_igate",
+  "version": "2021.12.0-dev",
+  "home_assistant_domain": "poe lora aprs",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",      
+      "parts": [
+        { "path": "../firmwares/igate/bootloader.bin", "offset": 4096 },
+        { "path": "../firmwares/igate/poe_igate_partitions.bin", "offset": 32768 },
+        { "path": "../firmwares/igate/poe_igate_firmware.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}

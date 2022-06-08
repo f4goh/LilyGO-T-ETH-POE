@@ -1,5 +1,7 @@
 <h1 align = "center">LilyGO T-ETH-POE</h1>
 
+## Automatic installation [firmware](https://f4goh.github.io/LilyGO-T-ETH-POE/index.html) 
+
 ## TTGO ETHERNET BOARD
 
 ![TTGO](image/product.jpg "TTGO ETH")
@@ -111,7 +113,7 @@ User verified with passcode!
 Data received with length: 75
 # aprsc 2.1.10-gd72a17c 8 Jun 2022 16:17:13 GMT T2FRA 172.26.12.248:14580
 ```
-LoRa frame is received
+Incoming LoRa frame
 ```
 msg queue
 f4goh-9>APLT00,WIDE1-1:!4753.41N/00016.61Eb000/000/A=000260Bat:4.06V/-99mA
