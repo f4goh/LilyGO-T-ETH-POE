@@ -89,7 +89,7 @@ f4goh-2>APLG01:=4753.40NL00016.60E&LoRa iGATE : https://github.com/f4goh/lora-ap
 Data received with length: 75
 # aprsc 2.1.10-gd72a17c 8 Jun 2022 16:16:37 GMT T2FRA 172.26.12.248:14580
 ```
-Now ethernet is disconnected
+Oups, Ethernet was disconnected
 ```
 Error: Connection aborted
 Disconnect tcp
