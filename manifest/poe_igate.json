@@ -7,9 +7,9 @@
     {
       "chipFamily": "ESP32",      
       "parts": [
-        { "path": "../firmwares/igate/bootloader.bin", "offset": 4096 },
-        { "path": "../firmwares/igate/poe_igate_partitions.bin", "offset": 32768 },
-        { "path": "../firmwares/igate/poe_igate_firmware.bin", "offset": 65536 }
+        { "path": "../firmwares/eth_igate/bootloader.bin", "offset": 4096 },
+        { "path": "../firmwares/eth_igate/poe_igate_partitions.bin", "offset": 32768 },
+        { "path": "../firmwares/eth_igate/poe_igate_firmware.bin", "offset": 65536 }
       ]
     }
   ]
